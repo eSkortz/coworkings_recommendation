@@ -56,6 +56,28 @@ MIDDLEWARE = [
 
 CORS_ORIGIN_ALLOW_ALL = True
 
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
+
+CORS_ALLOW_HEADERS = [
+    'Accept',
+    'Accept-Encoding',
+    'Authorization',
+    'Content-Type',
+    'DNT',
+    'Origin',
+    'User-Agent',
+    'X-Requested-With',
+]
+
 ROOT_URLCONF = "coworkings.urls"
 
 TEMPLATES = [
