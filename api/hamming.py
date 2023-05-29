@@ -1,5 +1,5 @@
 from typing import List
-from .coworking import Coworking, CoworkingId
+from coworking import Coworking, CoworkingId
 from .recommender import Recommender
 import numpy as np
 

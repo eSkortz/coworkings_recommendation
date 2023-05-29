@@ -65,6 +65,12 @@ def json_transformation(data):
             
             # 1 тег по оценке пользователей
             transformed_vector.append(data[data_counter]['review_rate'])
+
+            # 1 тег по цене
+            price_list = []
+            for price_counter in range(len(data[data_counter]['places'])):
+                price_list.append(data[data_counter]['places'][price_counter]['price'])
+            transformed_vector.append(min(price_list))
             
             coworking = {'id': data[data_counter]['id'], 'name': data[data_counter]['name'], 'vector': transformed_vector}
             

@@ -1,5 +1,5 @@
 from abc import abstractmethod, ABCMeta
-from .coworking import CoworkingId
+from coworking import CoworkingId
 from typing import List
 
 class Recommender(metaclass=ABCMeta):

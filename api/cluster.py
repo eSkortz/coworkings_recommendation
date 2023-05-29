@@ -1,5 +1,5 @@
 from typing import List
-from .coworking import Coworking, CoworkingId
+from coworking import Coworking, CoworkingId
 from .recommender import Recommender
 import numpy as np
 
@@ -23,7 +23,9 @@ class ClusteringRecommender(Recommender):
             return vec
         
         def coworking_to_features_vec(coworking: Coworking):
-            return [coworking.coordinates.lat, coworking.coordinates.lon, coworking.review_count, coworking.review_rate]
+            return [coworking.coordinates.lat, coworking.coordinates.lon,
+                    coworking.review_count, coworking.review_rate,
+                    coworking.avg_price_per_workplace]
         
         self._tags_data     = np.array(list(map(coworking_to_tags_vec, data)))
         self._features_data = np.array(list(map(coworking_to_features_vec, data)))

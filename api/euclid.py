@@ -1,5 +1,5 @@
 from typing import List
-from .coworking import Coworking, CoworkingId
+from coworking import Coworking, CoworkingId
 from .recommender import Recommender
 import numpy as np
 
@@ -24,6 +24,7 @@ class EuclideanRecommender(Recommender):
             vec.append(coworking.review_count)
             vec.append(coworking.coordinates.lat)
             vec.append(coworking.coordinates.lon)
+            vec.append(coworking.avg_price_per_workplace)
             return vec
         
         self._data = np.array(list(map(coworking_to_vec, data)))
